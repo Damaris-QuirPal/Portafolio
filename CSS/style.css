@@ -318,6 +318,9 @@ grid-template-columns:  repeat(auto-fit, minmax(300px, 1fr));
 }
 footer{
   background: #1a202c;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
   color: white;
   text-align: center;
   padding:  2rem 0;
