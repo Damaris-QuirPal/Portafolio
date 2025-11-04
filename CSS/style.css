@@ -394,11 +394,9 @@ footer {
   color: #2563eb;
 }
 
-#about {
-  background: #f8fafc;
-}
-
-#experiencia {
+#about,
+#experiencia,
+#certificados {
   background: #f8fafc;
 }
 
@@ -406,6 +404,73 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.proyects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.proyect-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+
+.proyect-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #2563eb;
+  margin-bottom: 0.2rem;
+}
+
+.card-proyect-info {
+  padding: 1rem 2rem;
+}
+
+
+.proyect-description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.link-proyect {
+  color: #1e40af;
+  text-decoration: none;
+}
+
+.link-proyect i {
+  margin-left: 10px;
+}
+
+.proyect-caracter li,
+.proyect-tecnologies li {
+  list-style: none;
+  margin-left: 10px;
+}
+
+.proyect-caracter p,
+.proyect-tecnologies p {
+  /* font-weight: bold; */
+  margin-bottom: 10px
+}
+
+.proyect-caracter span,
+.proyect-tecnologies span {
+  font-weight: bold;
+}
+
+.proyect-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 0 10px 10px;
+  position: sticky;
+  top: 0;
+
 }
 
 .certificates-grid {
@@ -443,6 +508,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-bottom: 0.2rem;
 }
 
+.proyect-time,
 .certificate-provider {
   font-size: 1rem;
   color: #666;
