@@ -12,5 +12,5 @@ Actualmente estoy construyendo proyectos para mi portafolio con el objetivo de s
 
 Encuéntrame en:  
 
-- [Portafolio](https://dku99.github.io/Portafolio/)  
+- [Portafolio](https://damaris-quirpal.github.io/Portafolio/)  
 - [LinkedIn](https://www.linkedin.com/in/damaris-qp/)  
