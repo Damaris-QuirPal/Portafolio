@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caso de estudio: Sistema Web de Gestión Inmobiliaria | Damaris Quiroz P.</title>
+    <meta name="description"
+        content="Caso de estudio UX/UI y desarrollo de un sistema web para administrar clientes, lotes y pagos de una inmobiliaria." />
+
+    <!-- Usa tu mismo estilo del portafolio (esta página vive en la carpeta /casos) -->
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="icon" href="../images/744de1d2-b906-44ca-b1e2-21e9e22d1255.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Damaris Quiroz Palacios</div>
+            <ul class="nav-links">
+                <li><a href="../index.html#inicio">Inicio</a></li>
+                <li><a href="../index.html#proyectos">Proyectos</a></li>
+                <li><a href="../index.html#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="caso">
+        <a class="caso-volver" href="../index.html#proyectos"><i class="fas fa-arrow-left"></i> Volver a proyectos</a>
+
+        <h1>Sistema Web de Gestión Inmobiliaria (CRM TERKSA)</h1>
+        <p>Una plataforma para que una inmobiliaria administre clientes, lotes, ventas y pagos en un solo lugar.</p>
+
+        <dl class="caso-ficha">
+            <div>
+                <dt>Rol</dt>
+                <dd>Desarrolladora Full Stack: análisis de procesos, diseño de interfaces y desarrollo</dd>
+            </div>
+            <div>
+                <dt>Periodo</dt>
+                <dd>Diciembre 2025 - Septiembre 2026</dd>
+            </div>
+            <div>
+                <dt>Herramientas</dt>
+                <dd>Figma, ScriptCase, PHP, MySQL, JavaScript, HTML/CSS, TCPDF</dd>
+            </div>
+        </dl>
+
+        <div class="caso-enlaces">
+            <a href="https://calidad.terksa.com/" class="btn btn-primary" target="_blank" rel="noopener">
+                Ver sistema en línea <i class="fas fa-external-link-alt"></i>
+            </a>
+            <!-- <a href="URL-DE-TU-FIGMA" class="btn btn-secondary" target="_blank" rel="noopener">Ver prototipo en Figma</a> -->
+        </div>
+
+        <!-- 1. CONTEXTO -->
+        <h2>1. Contexto y problema</h2>
+        <p>
+            La inmobiliaria llevaba el control de propietarios, lotes, clientes y pagos en hojas de cálculo de Excel.
+            Con el
+            tiempo, esto generó problemas muy concretos:
+        </p>
+        <ul>
+            <li>Era fácil perderse al buscar y reconocer la información en las distintas hojas.</li>
+            <li>No siempre se sabía si un pago se había aplicado correctamente o si correspondía algún descuento.</li>
+            <li>Los cuadres de caja no coincidían.</li>
+            <li>Era difícil administrar la relación entre propietarios, lotes y clientes.</li>
+        </ul>
+        <p>
+            <strong>Objetivo:</strong> centralizar la operación en una plataforma web que redujera errores y tiempo en
+            las
+            tareas administrativas y financieras, con una vista clara para cada rol.
+        </p>
+
+        <!-- 2. USUARIOS -->
+        <h2>2. Usuarios y necesidades</h2>
+        <div class="caso-tabla-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Qué necesita hacer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Administración</td>
+                        <td>Registrar propietarios, desarrollos, lotes e inmobiliaria; definir días de pago y de corte,
+                            porcentaje de
+                            interés y costos; ligar cada desarrollo a su propietario; guardar la información legal.</td>
+                    </tr>
+                    <tr>
+                        <td>Vendedor</td>
+                        <td>Validar si el cliente ya está registrado, asignarle un lote, generar la oferta de apartado,
+                            y consultar
+                            sus comisiones y el estatus de los lotes.</td>
+                    </tr>
+                    <tr>
+                        <td>Coordinador</td>
+                        <td>Consultar contratos y reportes de lotes vendidos, gastos complementarios y pagos realizados.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Caja</td>
+                        <td>Ver la información del cliente y sus pagos pendientes (enganches, mensualidades y gastos
+                            complementarios), registrar gastos, consultar reportes y enviar correos de aviso.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <figure>
+            <a href="../images/Roles.png" target="_blank" rel="noopener">
+                <img src="../images/Roles.png"
+                    alt="Diagrama de casos de uso por rol: Administración, Vendedor, Coordinador y Caja"
+                    class="caso-image" />
+            </a>
+            <figcaption>Casos de uso del sistema por rol.</figcaption>
+        </figure>
+        <p>
+            Cómo conocí sus necesidades:
+            <span>entrevistas, observación de su trabajo, reuniones con el cliente, ejemplos de
+                documentación</span>.
+        </p>
+
+        <!-- 3. PROCESO -->
+        <h2>3. Proceso de diseño</h2>
+
+        <h3>Mapeo del proceso</h3>
+        <p>
+            Documenté el recorrido completo del negocio: registro del cliente, asignación del desarrollo y lote,
+            apartado o
+            venta (contado o crédito), contrato, mensualidades, pagos, intereses moratorios y recibos.
+        </p>
+        <figure>
+            <!-- Reemplaza por tu diagrama -->
+
+            <a href="../images/Ofertadeapartado.png" target="_blank" rel="noopener">
+                <img src="../images/Ofertadeapartado.png"
+                    alt="Diagrama del flujo del proceso: Administración registra lotes, el vendedor valida al cliente y genera el apartado, y Caja da seguimiento a los pagos"
+                    class="caso-image" />
+            </a>
+            <figcaption>Flujo de proceso del cliente, de la venta al control de pagos.</figcaption>
+        </figure>
+
+        <h3>Estructura de la interfaz</h3>
+        <p>
+            Organicé el sistema en módulos (clientes, desarrollos, lotes, ventas, pagos y reportes) con permisos por
+            rol, para
+            que cada persona vea solo lo que necesita para su trabajo.
+        </p>
+        <h3>Wireframes</h3>
+        <div class="caso-galeria">
+            <figure>
+                <img src="../images/casos/Registrolote.png" alt="Wireframe de la pantalla de registro de lote" />
+                <figcaption>Registro de lote</figcaption>
+            </figure>
+            <figure>
+                <img src="../images/casos/OfertaDeApartado.png" alt="Wireframe de la pantalla de oferta de apartado" />
+                <figcaption>Oferta de apartado</figcaption>
+            </figure>
+            <figure>
+                <img src="../images/casos/PagosWireframe.png" alt="Wireframe de la pantalla de pagos" />
+                <figcaption>Pagos</figcaption>
+            </figure>
+            <figure>
+                <img src="../images/casos/ReporteClientes.png" alt="Wireframe de la pantalla de reporte de clientes" />
+                <figcaption>Reporte de clientes</figcaption>
+            </figure>
+        </div>
+        <p><small>Los datos mostrados son ficticios.</small></p>
+
+        <h3>Pantallas finales del sistema</h3>
+        <div class="caso-galeria">
+            <figure>
+                <img src="../images/casos/Lote.png" alt="Pantalla final de registro de lote" />
+                <figcaption>Registro de lote</figcaption>
+            </figure>
+            <figure>
+                <img src="../images/casos/OfertaApartado1.png"
+                    alt="Pantalla final de oferta de apartado: datos del cliente y del terreno" />
+                <img src="../images/casos/OfertaApartado2.png"
+                    alt="Pantalla final de oferta de apartado: condiciones de crédito y mensualidades" />
+                <figcaption>Oferta de apartado</figcaption>
+            </figure>
+            <figure>
+                <img src="../images/casos/Pagos.png" alt="Pantalla final de pagos" />
+                <figcaption>Pagos</figcaption>
+            </figure>
+        </div>
+        <h3>Caso de uso: apartar un lote</h3>
+        <div class="caso-tabla-wrap">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Actor</th>
+                        <td>Vendedor</td>
+                    </tr>
+                    <tr>
+                        <th>Precondición</th>
+                        <td>El desarrollo y el lote ya están registrados por Administración y el lote está disponible.
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Flujo principal</th>
+                        <td>
+                            <ol>
+                                <li>Busca al cliente.</li>
+                                <li>Si ya está registrado, selecciona su ficha.</li>
+                                <li>Elige el desarrollo y el lote.</li>
+                                <li>El sistema muestra el costo y las condiciones.</li>
+                                <li>Genera la oferta de apartado.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Flujo alterno</th>
+                        <td>Si el cliente no está registrado, se captura su información antes de asignar el lote.</td>
+                    </tr>
+                    <tr>
+                        <th>Postcondición</th>
+                        <td>El lote queda apartado y la oferta de apartado queda generada.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Decisiones de diseño</h3>
+        <ul>
+            <li><strong>Una vista por rol.</strong> Administración, vendedor, coordinador y caja ven solo lo que
+                necesitan
+                para su trabajo, para evitar la confusión que había en las hojas de Excel.</li>
+            <li><strong>Validar al cliente antes de apartar.</strong> El flujo de ventas empieza revisando si el cliente
+                ya
+                está registrado; después se asigna el lote y se genera la oferta de apartado.</li>
+            <li><strong>Cálculo automático de intereses y recargos.</strong> Lo automaticé con procesos programados para
+                eliminar el cálculo manual y los errores de pagos y descuentos.</li>
+            <li><strong>Avisos por correo desde caja.</strong> El sistema envía recordatorios de pagos pendientes.</li>
+            <li><strong>Contratos y recibos en PDF.</strong> Los generé de forma dinámica con TCPDF para que salgan con
+                los
+                datos correctos de cada cliente y lote.</li>
+        </ul>
+
+        <h3>Validación con usuarios</h3>
+        <p>
+            Al presentar el sistema a los usuarios, muchos no esperaban que una herramienta pudiera hacer tanto. Eso me
+            mostró que la capacitación y la comunicación forman parte del diseño: no basta con que el sistema funcione,
+            la
+            gente tiene que entender cómo usarlo.
+            <!-- <span class="pendiente">[Agrega un ajuste concreto que hiciste después de las pruebas]</span> -->
+        </p>
+
+        <!-- 4. RESULTADO -->
+        <h2>4. Resultado</h2>
+        <ul>
+            <li>Sistema en producción con módulos de propietarios, desarrollos, lotes, clientes, ventas, pagos, gastos
+                complementarios, contratos, recibos y reportes.</li>
+            <li>Menos errores y más rapidez al capturar información.</li>
+            <li>Una interfaz amigable para los usuarios.</li>
+            <li>Más compromiso con los pagos por parte de los clientes y un rastreo más preciso de la información.</li>
+            <!-- <li><span class="pendiente">[Si tienes una cifra o un comentario textual del cliente, agrégalo aquí]</span> 
+            </li>-->
+        </ul>
+
+        <!-- 5. APRENDIZAJES -->
+        <h2>5. Aprendizajes</h2>
+        <ul>
+            <li>Entender el proceso del negocio antes de diseñar pantallas evita rehacer trabajo.</li>
+            <li>La capacitación y la comunicación con el cliente para llegar a acuerdos son tan importantes como el
+                sistema.
+                La próxima vez planearía la capacitación desde el inicio.</li>
+            <li>Probar con usuarios reales desde etapas tempranas ayuda a ajustar el sistema a lo que la gente espera.
+            </li>
+        </ul>
+
+        <div class="caso-enlaces">
+            <a href="../index.html#proyectos" class="btn btn-secondary">Volver a proyectos</a>
+            <a href="../index.html#contacto" class="btn btn-primary">Contáctame</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Damaris Quiroz Palacios. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
